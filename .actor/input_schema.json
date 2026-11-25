@@ -1,0 +1,53 @@
+{
+  "title": "Global KYB Entity & VAT Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "query": {
+      "title": "Company Name Search",
+      "type": "string",
+      "description": "Legal company name to search in GLEIF LEI (and French SIRENE if enabled).",
+      "editor": "textfield",
+      "prefill": "Apple"
+    },
+    "lei": {
+      "title": "Exact LEI Code",
+      "type": "string",
+      "description": "Optional 20-character LEI code for exact lookup + direct/ultimate parent tree.",
+      "editor": "textfield"
+    },
+    "country": {
+      "title": "Country Code (ISO 2-letter)",
+      "type": "string",
+      "description": "Optional 2-letter ISO country code filter for GLEIF search (e.g. US, DE, FR).",
+      "editor": "textfield"
+    },
+    "vatNumbers": {
+      "title": "EU VAT Numbers",
+      "type": "array",
+      "description": "EU VAT numbers with 2-letter country prefix to verify via VIES (e.g. [\"IE6388047V\"]).",
+      "editor": "stringList",
+      "prefill": ["IE6388047V"]
+    },
+    "includeFrenchRegistry": {
+      "title": "Include French SIRENE Registry",
+      "type": "boolean",
+      "description": "Also search France's official SIRENE API when query is provided.",
+      "default": false
+    },
+    "includeParents": {
+      "title": "Include GLEIF Parent Entities",
+      "type": "boolean",
+      "description": "Fetch direct and ultimate parent LEI records when looking up an exact LEI.",
+      "default": true
+    },
+    "maxItems": {
+      "title": "Max Items",
+      "type": "integer",
+      "description": "Maximum records per registry query (1-100).",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 100
+    }
+  }
+}

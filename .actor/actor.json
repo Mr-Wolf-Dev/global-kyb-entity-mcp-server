@@ -1,0 +1,14 @@
+{
+  "actorSpecification": 1,
+  "name": "global-kyb-entity-mcp-server",
+  "title": "Global KYB Entity, LEI & EU VAT Registry + MCP",
+  "description": "Keyless HTTP-only Apify Actor & Standby MCP Server for global KYB due diligence: GLEIF LEI corporate ownership trees, real-time EU Commission VIES VAT validation, and French SIRENE registry.",
+  "version": "0.1",
+  "usesStandbyMode": true,
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

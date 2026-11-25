@@ -1,0 +1,20 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Global KYB Entity & VAT Output",
+  "description": "Normalized KYB records from GLEIF LEI, EU Commission VIES, and French SIRENE.",
+  "type": "object",
+  "properties": {
+    "overview": {
+      "type": "string",
+      "title": "KYB Overview",
+      "description": "Table view of verified KYB entities and VAT numbers.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "dataset": {
+      "type": "string",
+      "title": "Full KYB Dataset (JSON)",
+      "description": "Complete JSON dataset of normalized KYB records.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

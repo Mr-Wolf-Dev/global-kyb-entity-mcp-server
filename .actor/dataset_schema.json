@@ -1,0 +1,37 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "recordType": { "type": "string", "description": "Record type: gleif_entity, eu_vat, or french_company." },
+      "recordId": { "type": "string", "description": "Canonical record identifier." },
+      "legalName": { "type": ["string", "null"], "description": "Registered legal name." },
+      "name": { "type": ["string", "null"], "description": "Registered VAT trader name." },
+      "lei": { "type": ["string", "null"], "description": "20-character GLEIF LEI." },
+      "country": { "type": ["string", "null"], "description": "2-letter country code." },
+      "valid": { "type": ["boolean", "null"], "description": "EU VIES VAT validity." },
+      "siren": { "type": ["string", "null"], "description": "French SIREN number." }
+    },
+    "required": ["recordType", "recordId"]
+  },
+  "views": {
+    "overview": {
+      "title": "KYB Verification Overview",
+      "transformation": {
+        "fields": ["recordType", "recordId", "legalName", "name", "country", "valid"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "recordType": { "label": "Type", "format": "text" },
+          "recordId": { "label": "ID", "format": "text" },
+          "legalName": { "label": "Legal Name", "format": "text" },
+          "name": { "label": "VAT Name", "format": "text" },
+          "country": { "label": "Country", "format": "text" },
+          "valid": { "label": "VAT Valid", "format": "boolean" }
+        }
+      }
+    }
+  }
+}
