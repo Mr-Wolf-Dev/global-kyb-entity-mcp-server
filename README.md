@@ -1,5 +1,7 @@
 # Global KYB Entity, LEI & EU VAT Registry + MCP
 
+[![Glama MCP Server](https://glama.ai/mcp/servers/Mr-Wolf-Dev/global-kyb-entity-mcp-server/badges/score.svg)](https://glama.ai/mcp/servers/Mr-Wolf-Dev/global-kyb-entity-mcp-server)
+
 **Keyless, HTTP-only (< 512 MB RAM) Apify Actor & Standby Streamable HTTP MCP Server** for automated Know-Your-Business (KYB), legal entity verification, corporate parent trees, and real-time EU VAT validation.
 
 - **Apify Store:** `https://apify.com/mr.wolf/global-kyb-entity-mcp-server`
