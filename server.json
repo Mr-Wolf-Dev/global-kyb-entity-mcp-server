@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Mr-Wolf-Dev/global-kyb-entity-mcp-server",
+  "title": "Global KYB Entity, LEI & EU VAT Registry + MCP",
+  "description": "Keyless HTTP-only Apify Actor & Standby MCP Server for global KYB due diligence: GLEIF LEI corporate",
+  "repository": {
+    "url": "https://github.com/Mr-Wolf-Dev/global-kyb-entity-mcp-server",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mr-wolf-1--global-kyb-entity-mcp-server.apify.actor/mcp"
+    }
+  ]
+}
