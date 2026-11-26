@@ -18,7 +18,7 @@ export interface McpServerDependencies {
   billing: BillingMeter<KybBillingEvent>;
 }
 
-function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
+export function createConfiguredMcpServer(deps: McpServerDependencies): McpServer {
   const server = new McpServer({
     name: 'global-kyb-entity-mcp-server',
     version: '0.1.0',

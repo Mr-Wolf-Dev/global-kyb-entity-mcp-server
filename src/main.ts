@@ -1,7 +1,7 @@
 import { pathToFileURL } from 'node:url';
 import { runActorBatch, type KybBillingEvent } from './adapters/apify-actor.js';
 import { KybHttpClient } from './adapters/kyb-http-client.js';
-import { createKybMcpHttpServer } from './adapters/mcp-server.js';
+import { createConfiguredMcpServer, createKybMcpHttpServer } from './adapters/mcp-server.js';
 import { runDualModeActor } from './shared/actor-runner.js';
 import { createApifyBillingMeter } from './shared/billing-meter.js';
 
@@ -12,6 +12,7 @@ export async function main(): Promise<void> {
   await runDualModeActor({
     runBatch: () => runActorBatch(source, billing),
     createMcpServer: () => createKybMcpHttpServer({ source, billing }),
+    createStdioMcpServer: () => createConfiguredMcpServer({ source, billing }),
   });
 }
 
